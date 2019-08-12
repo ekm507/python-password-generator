@@ -4,31 +4,40 @@ import secrets
 from secrets import choice
 from io import open
 
-file = open('words-list.txt', 'r', encoding='utf-8')
+verbsFile = open('verbs.txt', 'r', encoding='utf-8')
+thingsFile = open('things.txt', 'r', encoding='utf-8')
 
-wordsSet = set()
+verbsSet = set()
 
-for word in file:
-    wordsSet.add(word.rstrip('\n'))
+for verb in verbsFile:
+    verbsSet.add(verb.rstrip('\n') + 's')
 
-wordsList = list(wordsSet)
+verbsList = list(verbsSet)
 
-minsize = 10
-maxsize = 15
+thingsSet = set()
+
+for thing in thingsFile:
+    thingsSet.add(thing.rstrip('\n'))
+
+thingsList = list(thingsSet)
+
+
+minsize = 20
+maxsize = 25
 
 passwordSize = maxsize + 1
 
-while(passwordSize > maxsize):
-    password = choice(wordsList)
+while(passwordSize > maxsize or passwordSize < minsize):
+    password = choice(thingsList)
     passwordSize = len(password)
-    while(passwordSize < minsize):
-        word = choice(wordsList)
-        password += ' ' + word
-        passwordSize = len(password)
-
+    word = choice(verbsList)
+    password += ' ' + word
+    word = choice(thingsList)
+    password += ' ' + word
+    passwordSize = len(password)
 
 print(password, passwordSize)
 
-print(wordsSet)
 
-file.close()
+thingsFile.close()
+verbsFile.close()
