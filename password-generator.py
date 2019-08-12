@@ -9,7 +9,7 @@ thingsFile = open('things.txt', 'r', encoding='utf-8')
 verbsSet = set()
 
 for verb in verbsFile:
-    verbsSet.add(verb.rstrip('\n') + 's')
+    verbsSet.add(verb.rstrip('\n'))
 
 verbsList = list(verbsSet)
 
