@@ -1,5 +1,4 @@
 
-# will change this to a safe cryptographic lib.
 import secrets
 from secrets import choice
 from io import open
