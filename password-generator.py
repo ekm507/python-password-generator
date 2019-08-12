@@ -1,6 +1,7 @@
 
 # will change this to a safe cryptographic lib.
-import random
+import secrets
+from secrets import choice
 from io import open
 
 file = open('words-list.txt', 'r', encoding='utf-8')
@@ -18,10 +19,10 @@ maxsize = 15
 passwordSize = maxsize + 1
 
 while(passwordSize > maxsize):
-    password = random.choice(wordsList)
+    password = choice(wordsList)
     passwordSize = len(password)
     while(passwordSize < minsize):
-        word = random.choice(wordsList)
+        word = choice(wordsList)
         password += ' ' + word
         passwordSize = len(password)
 
