@@ -1,0 +1,8 @@
+take
+put
+push
+pull
+cut
+make
+laugh
+reset
