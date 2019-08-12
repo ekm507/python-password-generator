@@ -4,5 +4,4 @@
 
 ## TODO
 
-* use a safe cryptographic lib to generate randoms.
-* make it able to generate sentences.
+* make better sentences
