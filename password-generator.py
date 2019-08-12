@@ -1,5 +1,4 @@
 
-
 import secrets
 from secrets import choice
 from io import open
